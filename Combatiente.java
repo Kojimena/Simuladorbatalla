@@ -6,12 +6,15 @@
 **/
 
 import java.util.Random;
+import java.util.ArrayList; // 
 
 public abstract class Combatiente {
     protected String nombre, sonido;
     protected int ataque, vida;
     protected String estado;
     private Random rand;
+	protected ArrayList<String> sonidogolpes = new ArrayList<String>();
+	
 
     public Combatiente(){   
     rand = new Random();
@@ -35,6 +38,18 @@ public abstract class Combatiente {
 		return nombre;
 	}
 
+	public String getSonidogolpe(){
+		sonidogolpes.add("Auch");
+		sonidogolpes.add("*cries in spanish*");
+		sonidogolpes.add("snif snif ");
+		sonidogolpes.add("no puede ser");
+		sonidogolpes.add("nooooo");
+		sonidogolpes.add("necesito vida");
+		String r = sonidogolpes.get(rand.nextInt(sonidogolpes.size()));
+        return (r);
+    }
+		
+
     //metodos
 	public int atacar(){
 		int daño = 0;
@@ -56,18 +71,19 @@ public abstract class Combatiente {
 	}
 
 	public int Envenenar(){
+		int contador = 0;
 		int daño = 0;
-		if(ataque > 0){
-			daño = ataque - 5;
+		if(ataque > 0 &&  contador!= 3){
+			daño = ataque * 3;
+			contador= contador+1;
 		}
-		
 		return daño;
 	}
 
 	public int Magiaobscura(){
 		int daño = 0;
 		if(ataque > 0){
-			daño = ataque - 4;
+			daño = ataque * 1;
 		}
 		
 		return daño;
@@ -88,6 +104,7 @@ public abstract class Combatiente {
         }
 		return vida; 
 	}
+
 
     //Sera sobreescrito
 	public abstract int atacar2();

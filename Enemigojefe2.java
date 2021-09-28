@@ -1,8 +1,9 @@
 public class Enemigojefe2 extends Enemigo2 {
    
    public Enemigojefe2(){ 
-    super("Jefe", 30);
+    super("Jefe2", 30);
     sonido= "Soy el jefe, y tú quieres pelea??";
+
     }
 
     //metodos

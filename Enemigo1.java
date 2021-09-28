@@ -6,6 +6,7 @@
         this.nombre = nom;
         this.vida =vida;
         sonido = "A LA GUERRAAAA!!";
+
 	
 	}
 
@@ -19,14 +20,7 @@
 		return daño;
 	}
 
-	public int Envenenar(){
-		int daño = 0;
-		if(ataque > 0){
-			daño = ataque;
-		}
-		
-		return daño;
-	}
+
 
     //Datos
 	//Mostrar en pantalla los datos 

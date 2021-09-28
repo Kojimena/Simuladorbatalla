@@ -33,14 +33,6 @@ class Jugador extends Combatiente {
 		return vida; 
 	}
 
-	public int gemaDesastroza(){
-		int daño = 0;
-		if(ataque > 0){
-			daño = ataque -5;
-		}
-		
-		return daño;
-	}
     
     //Datos
 	//Mostrar en pantalla los datos 

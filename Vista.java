@@ -84,7 +84,7 @@ public class Vista {
 		int opcion;
         mensaje("----OPCIONES----");
         mensaje("1. Explorador");
-        mensaje("2. Combatiente");
+        mensaje("2. Guerrer@");
         mensaje("Elige tu Jugador: ");
 		opcion = scan.nextInt();
 
@@ -132,9 +132,11 @@ public class Vista {
     switch(opcion){
         case 1:
             enemigo.recibirdaño(jugador.gemaDesastroza());
+            mensaje("El enemigo ha dicho:" + enemigo.getSonidogolpe());
             break;
         case 2:
             enemigo.recibirdaño(jugador.atacar2());
+            mensaje("El enemigo ha dicho:" + enemigo.getSonidogolpe());
             break;
         case 3:
             jugador.recuperarVida();
@@ -163,7 +165,7 @@ public class Vista {
         
         do{
             System.out.println("Elige que ataque realizar: ");
-            System.out.println("1) Envenenar. Poder de ataque: "+enemigo.getAtaque());
+            System.out.println("1) Envenenar. Poder de ataque: "+(enemigo.getAtaque()*3));
             System.out.println("2) Magia obscura. Poder de ataque: "+enemigo.getAtaque());
             System.out.println("3) Recuperar vida");
             System.out.println("4). Pasar turno");
@@ -182,9 +184,11 @@ public class Vista {
     switch(opcion){
         case 1:
             jugador.recibirdaño(enemigo.Envenenar());
+            mensaje("El jugador ha dicho:" + jugador.getSonidogolpe());
             break;
         case 2:
             jugador.recibirdaño(enemigo.Magiaobscura());
+            mensaje("El jugador ha dicho:" +jugador.getSonidogolpe());
             break;
         case 3:
             enemigo.recuperarVida();

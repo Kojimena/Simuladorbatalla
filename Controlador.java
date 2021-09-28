@@ -12,7 +12,7 @@ private static Vista vista = new Vista();
     
 public static void main(String[] args){
     int opcion;
-    Combatiente com = null;
+
 
     vista.mensaje("------(ง •̀ゝ•́)ง--------Simulador de batalla --------(ง •̀ゝ•́)ง------");
     vista.mensaje("¿Qué desea hacer?");
