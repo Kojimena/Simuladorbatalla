@@ -18,7 +18,7 @@ class Enemigojefe extends Enemigo1{
 	public int Envenenar(){
 		int daño = 0;
 		if(ataque > 0){
-			daño = ataque - 6;
+			daño = ataque + 2 ;
 		}
 		
 		return daño;

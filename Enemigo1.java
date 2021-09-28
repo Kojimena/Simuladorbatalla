@@ -22,7 +22,7 @@
 	public int Envenenar(){
 		int daño = 0;
 		if(ataque > 0){
-			daño = ataque - 4;
+			daño = ataque;
 		}
 		
 		return daño;

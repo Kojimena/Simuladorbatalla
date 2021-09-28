@@ -22,7 +22,7 @@ class Enemigo2 extends Combatiente {
 	public int Magiaobscura(){
 		int daño = 0;
 		if(ataque > 0){
-			daño = ataque - 8;
+			daño = ataque * 3;
 		}
 		
 		return daño;
