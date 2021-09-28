@@ -197,7 +197,7 @@ public class Vista {
             mensaje("saliendo de la batalla, adiós");
             System.exit(0);
             break;
-    }if (jugador.getVida()<0){
+    }if (jugador.getVida()<=0){
         mensaje("El Jugador ha muerto, lo han derrotado y ha finalizado la batalla");
         break;
     }
