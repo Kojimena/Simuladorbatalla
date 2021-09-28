@@ -1,6 +1,6 @@
 class Explorador extends Jugador{
     public Explorador(){
-        super("Explorador", 10, 10);
+        super("Explorador", 10, 5);
         sonido= "Explorador al ataque!!!";
 	
     }

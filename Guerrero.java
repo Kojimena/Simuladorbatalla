@@ -1,7 +1,7 @@
 public class Guerrero extends Jugador {
     
     public Guerrero(){
-        super("Guerrero", 40, 20);
+        super("Guerrero", 40, 10);
         sonido= "El guerrero soy yo:)";
   
     }

@@ -15,7 +15,8 @@ public static void main(String[] args){
 
 
     vista.mensaje("------(ง •̀ゝ•́)ง--------Simulador de batalla --------(ง •̀ゝ•́)ง------");
-    vista.mensaje("¿Qué desea hacer?");
+    vista.mensaje("Instrucciones:"+ "\n" + " Usted debe elegir un tipo de jugador "+ "\n" + "-Explorador: debil pero más uso de items "+ "\n" +"-Guerrero: fuerte pero menos uso de items "+ "\n" +
+                  " Luego de manera aleatoria se le asignará un enemigo "+ "\n" + "El jugador puede tomar el primer turno con la opción 3) y el enemigo con la opción 4)");
    
     opcion = vista.menu();
    

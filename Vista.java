@@ -22,7 +22,7 @@ public class Vista {
 
     public int menu(){
 		int opcion;
-
+                mensaje("\n" +"¿Qué desea hacer?");
                 System.out.println("1. Nuevo Jugador");
                 System.out.println("2. Nuevo Enemigo");
                 System.out.println("3. Batalla, turno del jugador");
@@ -101,7 +101,6 @@ public class Vista {
         jugador.mostrar();
         mensaje("-Agregue un enemigo para batallar con la opción 2-");
         return jugador;
- 
     }
 
     public void tipoAtaquejugador(){
