@@ -27,7 +27,7 @@ public class Vista {
                 System.out.println("2. Nuevo Enemigo");
                 System.out.println("3. Batalla, turno del jugador");
                 System.out.println("4. Batalla, turno del enemigo");
-                System.out.println("5. Salir de la batalla ");
+                System.out.println("5. Salir del simulador batalla ");
 
                 System.out.print("Seleccion: ");
             try {
@@ -97,8 +97,9 @@ public class Vista {
 				break;
 
 		}
-        mensaje("Se ha generado el siguiente jugador. -Agregue un enemigo para batallar con la opción 2-");
+        mensaje("Se ha generado el siguiente jugador:");
         jugador.mostrar();
+        mensaje("-Agregue un enemigo para batallar con la opción 2-");
         return jugador;
  
     }
@@ -115,7 +116,8 @@ public class Vista {
             System.out.println("1) Item -Gema desastroza-. Poder: "+(jugador.getAtaque()-5));
             System.out.println("2) Item -Rayo laser-. Poder: "+(jugador.getAtaque()*2));
             System.out.println("3) Item -Recuperar vida-");
-            System.out.println("4). Salir");
+            System.out.println("4). Pasar turno");
+            System.out.println("5). Salir");
 
         System.out.print("Seleccion: ");
         try {
@@ -126,7 +128,7 @@ public class Vista {
         Scanner scan = new Scanner(System.in);
         opcion = scan.nextInt();
         }
-    }while(opcion < 0 || opcion > 4);
+    }while(opcion < 0 || opcion > 5);
     switch(opcion){
         case 1:
             enemigo.recibirdaño(jugador.gemaDesastroza());
@@ -138,9 +140,13 @@ public class Vista {
             jugador.recuperarVida();
             break;
         case 4:
+            mensaje("Se le ha pasado el turno al enemigo");
+            tipoAtaqueenemigo();
+            break;
+        case 5:
             mensaje("saliendo de la batalla, adiós");
             System.exit(0);
-            break;
+
     }if (enemigo.getVida()<=0){
         mensaje("El enemigo ha muerto, ha finalizado la batalla");
         break;
@@ -157,10 +163,11 @@ public class Vista {
         
         do{
             System.out.println("Elige que ataque realizar: ");
-            System.out.println("1) Envenenar. Poder de ataque: "+jugador.getAtaque());
-            System.out.println("2) Magia obscura. Poder de ataque: "+jugador.getAtaque());
+            System.out.println("1) Envenenar. Poder de ataque: "+enemigo.getAtaque());
+            System.out.println("2) Magia obscura. Poder de ataque: "+enemigo.getAtaque());
             System.out.println("3) Recuperar vida");
-            System.out.println("4. Salir");
+            System.out.println("4). Pasar turno");
+            System.out.println("5). Salir");
 
         System.out.print("Seleccion: ");
         try {
@@ -171,19 +178,30 @@ public class Vista {
         Scanner scan = new Scanner(System.in);
         opcion = scan.nextInt();
         }
-    }while(opcion < 0 || opcion > 2);
+    }while(opcion < 0 || opcion > 5);
     switch(opcion){
         case 1:
-            enemigo.recibirdaño(jugador.atacar());
+            jugador.recibirdaño(enemigo.Envenenar());
             break;
         case 2:
-            enemigo.recibirdaño(jugador.atacar2());
+            jugador.recibirdaño(enemigo.Magiaobscura());
             break;
-    }if (enemigo.getVida()<0){
+        case 3:
+            enemigo.recuperarVida();
+            break;
+        case 4:
+            mensaje("Se le ha pasado el turno al Jugador");
+            tipoAtaquejugador();
+            break;
+        case 5:
+            mensaje("saliendo de la batalla, adiós");
+            System.exit(0);
+            break;
+    }if (jugador.getVida()<0){
         mensaje("El Jugador ha muerto, lo han derrotado y ha finalizado la batalla");
         break;
     }
-    }while(jugador.getVida() > 0 && disponible);
+    }while(enemigo.getVida() > 0 && disponible);
     }
 
 

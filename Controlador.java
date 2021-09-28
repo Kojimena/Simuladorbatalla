@@ -14,7 +14,7 @@ public static void main(String[] args){
     int opcion;
     Combatiente com = null;
 
-    vista.mensaje("--------------Simulador de luchas --------------");
+    vista.mensaje("------(ง •̀ゝ•́)ง--------Simulador de batalla --------(ง •̀ゝ•́)ง------");
     vista.mensaje("¿Qué desea hacer?");
    
     opcion = vista.menu();
@@ -38,9 +38,9 @@ public static void main(String[] args){
         case 3:
         vista.tipoAtaquejugador();
         break;
-
+      
         case 4:
-
+        vista.tipoAtaqueenemigo();
         break; 
 
         case 5:

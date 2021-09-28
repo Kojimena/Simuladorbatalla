@@ -19,6 +19,15 @@ class Enemigo2 extends Combatiente {
 		return daño;
 	}
 
+	public int Magiaobscura(){
+		int daño = 0;
+		if(ataque > 0){
+			daño = ataque - 8;
+		}
+		
+		return daño;
+	}
+
     //Datos
 	//Mostrar en pantalla los datos 
 	public void mostrar(){

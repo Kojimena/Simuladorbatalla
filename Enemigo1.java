@@ -19,6 +19,15 @@
 		return daño;
 	}
 
+	public int Envenenar(){
+		int daño = 0;
+		if(ataque > 0){
+			daño = ataque - 4;
+		}
+		
+		return daño;
+	}
+
     //Datos
 	//Mostrar en pantalla los datos 
 	public void mostrar(){

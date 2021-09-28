@@ -55,6 +55,24 @@ public abstract class Combatiente {
 		return daño;
 	}
 
+	public int Envenenar(){
+		int daño = 0;
+		if(ataque > 0){
+			daño = ataque - 5;
+		}
+		
+		return daño;
+	}
+
+	public int Magiaobscura(){
+		int daño = 0;
+		if(ataque > 0){
+			daño = ataque - 4;
+		}
+		
+		return daño;
+	}
+
     public void recibirdaño(int puntos){
 		vida -= puntos;
         if (vida <= 0){
