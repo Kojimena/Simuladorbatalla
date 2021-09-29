@@ -2,42 +2,63 @@
 * @author: Karen Jimena Hernández Ortega
 * @version: 26-sep-21
 * @file: Combatiente.java 
-*Clase combatienete
+*Clase combatienete/clase madre 
 **/
 
 import java.util.Random;
-import java.util.ArrayList; // 
+import java.util.ArrayList; //imports
 
 public abstract class Combatiente {
+	//propiedades protected 
     protected String nombre, sonido;
     protected int ataque, vida;
     protected String estado;
     private Random rand;
 	protected ArrayList<String> sonidogolpes = new ArrayList<String>();
 	
-
+	//Constructor sin parametros
     public Combatiente(){   
     rand = new Random();
-    ataque = rand.nextInt(5)+1 ;
+    ataque = rand.nextInt(5)+1 ; //el ataque será un número random para todos los combatientes 
     estado= "Vivo";
     }
 
+   /**
+    * getter
+    * @return sonido
+    */
     public String getSonido(){
         return sonido;
     }
 
+	/**
+    * getter
+    * @return ataque
+    */
     public int getAtaque() {
 		return ataque;
 	}	
 
+	/**
+    * getter
+    * @return vida
+    */
     public int getVida() {
 		return vida;
 	}	
 
+	/**
+    * getter
+    * @return nombre
+    */
     public String getNombre(){
 		return nombre;
 	}
 
+	/**
+    * getter de un sonido de Combatiente random al ser golpeado
+    * @return String
+    */
 	public String getSonidogolpe(){
 		sonidogolpes.add("Auch");
 		sonidogolpes.add("*cries in spanish*");
@@ -50,7 +71,10 @@ public abstract class Combatiente {
     }
 		
 
-    //metodos
+	/**
+    * Método atacar, devuelve un daño normal
+    * @return int
+    */
 	public int atacar(){
 		int daño = 0;
 		
@@ -61,6 +85,10 @@ public abstract class Combatiente {
 		return daño;
 	}
 
+	/**
+    * Método gemaDesastroza, devuelve un daño de -5
+    * @return int
+    */
     public int gemaDesastroza(){
 		int daño = 0;
 		if(ataque > 0){
@@ -70,6 +98,10 @@ public abstract class Combatiente {
 		return daño;
 	}
 
+	/**
+    * Método Envenenar, devuelve un daño de *3
+    * @return int
+    */
 	public int Envenenar(){
 		int contador = 0;
 		int daño = 0;
@@ -80,6 +112,10 @@ public abstract class Combatiente {
 		return daño;
 	}
 
+	/**
+    * Método Magiaobscura, devuelve un daño normal
+    * @return int
+    */
 	public int Magiaobscura(){
 		int daño = 0;
 		if(ataque > 0){
@@ -89,6 +125,7 @@ public abstract class Combatiente {
 		return daño;
 	}
 
+	// método que recibe el daño de los enemigos o combatientes
     public void recibirdaño(int puntos){
 		vida -= puntos;
         if (vida <= 0){
@@ -96,6 +133,10 @@ public abstract class Combatiente {
         }
 	}
 
+	/**
+    * Método recuperarVida, devuelve la vida + 10 extras
+    * @return int
+    */
     public int recuperarVida(){
 		if (vida<0){
 			vida = 10;

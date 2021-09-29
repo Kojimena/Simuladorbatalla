@@ -52,23 +52,20 @@ public class Vista {
         System.out.println(mensaje);
     }
 
-    public String getName(){
-        System.out.printf("\nIngrese el nombre del jugador: ");
 
-        String nombre = scan.nextLine();
-
-        return nombre;
-    }
-
+    /**
+    * Elige al enemigo de forma random
+    * @return Combatiente 
+    */
     public Combatiente tipoEnemigo(){		
 		int aux = rand.nextInt(3);
 		
 		switch(aux){
 			case 0:
-				enemigo = new Enemigo1("Enemigo1",10);
+				enemigo = new Enemigo1("Enemigo1",45);
 				break;
 			case 1:
-				enemigo = new Enemigo2("Enemigo1",20);
+				enemigo = new Enemigo2("Enemigo1",35);
 				break;
 			case 2:
 				enemigo = new Enemigojefe();
@@ -79,7 +76,10 @@ public class Vista {
         return enemigo;
     }
 
-    
+    /**
+    * Muestra el menú del tipo de Jugador que se puede seleccionar
+    * @return Combatiente 
+    */
     public Combatiente tipoJugador(){		
 		int opcion;
         mensaje("----OPCIONES----");
@@ -103,6 +103,10 @@ public class Vista {
         return jugador;
     }
 
+    /**
+    * Muestra el menú del tipo de Ataque que el Jugador puede seleccionar
+    * @exception InputMismatchException
+    */
     public void tipoAtaquejugador(){
         boolean disponible = true;
         int opcion;
@@ -155,6 +159,11 @@ public class Vista {
     }while(jugador.getVida() > 0 && disponible);
     }
 
+
+    /**
+    * Muestra el menú del tipo de Ataque que el enemigo puede seleccionar
+    * @exception InputMismatchException
+    */
     public void tipoAtaqueenemigo(){
         boolean disponible = true;
         int opcion;

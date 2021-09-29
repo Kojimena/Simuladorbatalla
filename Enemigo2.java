@@ -1,3 +1,9 @@
+ /**
+* @author: Karen Jimena Hernández Ortega
+* @version: 26-sep-21
+* @file: Enemigo2.java 
+*Creación de Enemigo2 y sus propiedades 
+**/
 class Enemigo2 extends Combatiente {
     
     //Constructor
@@ -13,7 +19,7 @@ class Enemigo2 extends Combatiente {
 	public int atacar2() {
 		int daño = 0;
 		if(ataque > 0){
-			daño = ataque * 2;
+			daño = ataque * 1;
 		}
 		
 		return daño;

@@ -1,6 +1,14 @@
+ /**
+* @author: Karen Jimena Hernández Ortega
+* @version: 26-sep-21
+* @file: Enemigo1.java 
+*Creación de Enemigo1 y sus propiedades
+**/
  class Enemigo1 extends Combatiente{
     
-    //Constructor
+    /*Constructor
+	* @param nombre y vida 
+	*/
 	public Enemigo1(String nom, int vida){
 		super();
         this.nombre = nom;
@@ -10,7 +18,7 @@
 	
 	}
 
-        //metodos
+    //metodo atacar Override, se multiplica el ataque *2
 	public int atacar2() {
 		int daño = 0;
 		if(ataque > 0){

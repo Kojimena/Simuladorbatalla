@@ -1,11 +1,14 @@
+ /**
+* @author: Karen Jimena Hernández Ortega
+* @version: 26-sep-21
+* @file: Jugador.java 
+*Creación de Jugador y sus propiedades/ hereda de Combatiente
+**/
 class Jugador extends Combatiente {
 
-    /*public Jugador(String nom, int vida){
-        super();
-        this.nombre = nom;
-        this.vida= vida;
-    }*/
-
+    /*Constructor Jugador
+	* @param nombre, vida, ataque 
+	*/
 	public Jugador(String nom, int vida, int ataque){
         super();
         this.nombre = nom;
@@ -14,7 +17,7 @@ class Jugador extends Combatiente {
 		sonido= "hip hip hip!!!";
     }
 
-    //metodos
+    // Override de método atacar2 para el jugador el daño es de *2
 	public int atacar2() {
 		int daño = 0;
 		if(ataque > 0){
@@ -24,6 +27,8 @@ class Jugador extends Combatiente {
 		return daño;
 	}
 
+	// Override de método recuperarvida para los jugadores es de 10
+	//* return vida 
 	public int recuperarVida(){
 		if (vida<0){
 			vida = 10;
